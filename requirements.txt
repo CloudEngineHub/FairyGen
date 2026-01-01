@@ -1,0 +1,13 @@
+datasets
+diffusers
+accelerate>=0.16.0
+torch
+torchvision
+transformers>=4.25.1
+ftfy
+tensorboard1
+Jinja2
+peft
+pillow
+bitsandbytes
+imageio-ffmpeg
