@@ -61,6 +61,29 @@ if is_torch_available():
     _import_structure["utils"] = ["AttnProcsLayers"]
     if is_transformers_available():
         _import_structure["single_file"] = ["FromSingleFileMixin"]
+        _import_structure["lora_pipeline"] = [
+            "AmusedLoraLoaderMixin",
+            "StableDiffusionLoraLoaderMixin",
+            "SD3LoraLoaderMixin",
+            "AuraFlowLoraLoaderMixin",
+            "StableDiffusionXLLoraLoaderMixin",
+            "LTXVideoLoraLoaderMixin",
+            "LoraLoaderMixin",
+            "FluxLoraLoaderMixin",
+            "CogVideoXLoraLoaderMixin",
+            "CogView4LoraLoaderMixin",
+            "Mochi1LoraLoaderMixin",
+            "HunyuanVideoLoraLoaderMixin",
+            "SanaLoraLoaderMixin",
+            "Lumina2LoraLoaderMixin",
+            "WanLoraLoaderMixin",
+            "KandinskyLoraLoaderMixin",
+            "HiDreamImageLoraLoaderMixin",
+            "SkyReelsV2LoraLoaderMixin",
+            "QwenImageLoraLoaderMixin",
+            "ZImageLoraLoaderMixin",
+            "Flux2LoraLoaderMixin",
+        ]
         _import_structure["lora"] = ["LoraLoaderMixin", "StableDiffusionXLLoraLoaderMixin"]
         _import_structure["textual_inversion"] = ["TextualInversionLoaderMixin"]
         _import_structure["ip_adapter"] = ["IPAdapterMixin"]
@@ -77,6 +100,29 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
 
         if is_transformers_available():
             from .ip_adapter import IPAdapterMixin
+            from .lora_pipeline import (
+                AmusedLoraLoaderMixin,
+                AuraFlowLoraLoaderMixin,
+                CogVideoXLoraLoaderMixin,
+                CogView4LoraLoaderMixin,
+                Flux2LoraLoaderMixin,
+                FluxLoraLoaderMixin,
+                HiDreamImageLoraLoaderMixin,
+                HunyuanVideoLoraLoaderMixin,
+                KandinskyLoraLoaderMixin,
+                LoraLoaderMixin,
+                LTXVideoLoraLoaderMixin,
+                Lumina2LoraLoaderMixin,
+                Mochi1LoraLoaderMixin,
+                QwenImageLoraLoaderMixin,
+                SanaLoraLoaderMixin,
+                SD3LoraLoaderMixin,
+                SkyReelsV2LoraLoaderMixin,
+                StableDiffusionLoraLoaderMixin,
+                StableDiffusionXLLoraLoaderMixin,
+                WanLoraLoaderMixin,
+                ZImageLoraLoaderMixin,
+            )
             from .lora import LoraLoaderMixin, StableDiffusionXLLoraLoaderMixin
             from .single_file import FromSingleFileMixin
             from .textual_inversion import TextualInversionLoaderMixin

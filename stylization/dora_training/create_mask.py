@@ -4,8 +4,8 @@ from PIL import Image
 from rembg import new_session, remove
 import numpy as np
 
-input_image_path = '/Users/zhengjiayi/Downloads/FairyGen/stylization/dora_training/data/train/green_boy/texture.png'  
-output_mask_path = '/Users/zhengjiayi/Downloads/FairyGen/stylization/dora_training/data/train/green_boy/mask.png'                         
+input_image_path = './data/train/green_boy/texture.png'
+output_mask_path = './data/train/green_boy/mask.png'
 model_name = "isnet-anime"                                    
 
 def process_single_image(input_path, output_path, model_name):

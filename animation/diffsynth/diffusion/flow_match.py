@@ -30,7 +30,7 @@ class FlowMatchScheduler():
     def set_timesteps_wan(num_inference_steps=100, denoising_strength=1.0, shift=None):
         sigma_min = 0.0
         sigma_max = 1.0
-        shift = 5 if shift is None else shift
+        shift = 5 if shift is None else shift  # adjust to test timestep distribution
         num_train_timesteps = 1000
         sigma_start = sigma_min + (sigma_max - sigma_min) * denoising_strength
         sigmas = torch.linspace(sigma_start, sigma_min, num_inference_steps + 1)[:-1]

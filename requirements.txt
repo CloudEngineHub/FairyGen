@@ -11,3 +11,4 @@ peft
 pillow
 bitsandbytes
 imageio-ffmpeg
+opencv-python

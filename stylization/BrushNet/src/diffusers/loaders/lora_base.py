@@ -306,6 +306,11 @@ def _best_guess_weight_name(
     return weight_name
 
 
+def _pack_dict_with_prefix(state_dict, prefix):
+    sd_with_prefix = {f"{prefix}.{key}": value for key, value in state_dict.items()}
+    return sd_with_prefix
+
+
 def _load_lora_into_text_encoder(
     state_dict,
     network_alphas,
