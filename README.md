@@ -53,7 +53,7 @@ BrushNet Checkpoint: available at this [Google Drive Link](https://drive.google.
 hf download Wan-AI/Wan2.2-TI2V-5B
 ```
 
-[NOTE] Local Model Loading: To load weights from local directories, modify the `--model_id_with_origin_paths` in `stage1_id.sh` to `model_paths`, and load the models in JSON format as shown below:
+Local Model Loading: To load weights from local directories, modify the `--model_id_with_origin_paths` in `stage1_id.sh` to `model_paths`, and load the models in JSON format as shown below:
 
 ```bash
 --model_paths '[
