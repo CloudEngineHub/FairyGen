@@ -41,11 +41,11 @@ pip install -e .
 **For Stylization (SDXL & BrushNet):**
 
 ```bash
-hf download stabilityai/stable-diffusion-xl-base-1.0. # SDXL
-hf download madebyollin/sdxl-vae-fp16-fix. # VAE
+hf download stabilityai/stable-diffusion-xl-base-1.0  
+hf download madebyollin/sdxl-vae-fp16-fix 
 ```
 
-BrushNet Checkpoint: Available at this [Google Drive Link](https://drive.google.com/drive/folders/1KBr71RlQEACJPcs2Uoanpi919nISpG1L)
+BrushNet Checkpoint: available at this [Google Drive Link](https://drive.google.com/drive/folders/1KBr71RlQEACJPcs2Uoanpi919nISpG1L)
 
 **For Animation (Wan2.2-TI2V-5B):**
 
@@ -71,7 +71,7 @@ hf download Wan-AI/Wan2.2-TI2V-5B
 
 Step 1: Style DoRA Training
 
-The goal is to learn the character's visual style.The training data requires a single character image paired with its binary mask. A script to generate binary masks is provided (`create_mask.py`). Example datasets can be found in `stylization/dora_training/data/train`.
+The goal is to learn the character's visual style. The training data requires a single character image paired with its binary mask. A script to generate binary masks is provided ([create_mask.py](stylization/dora_training/create_mask.py)). Example datasets can be found in [here](stylization/dora_training/data/train).
 
 ```bash
 cd stylization/dora_training
@@ -80,7 +80,7 @@ bash train.sh
 
 Step 2: Background Generation
 
-After training the style DoRA, BrushNet is used for generating consistent backgrounds. Example data is available in `stylization/BrushNet/data/`. When crafting prompts, it is recommended to include a description of the character’s appearance for better results.
+After training the style DoRA, BrushNet is used for generating consistent backgrounds. Example data is available [here](./stylization/BrushNet/data/). When crafting prompts, it is recommended to include a description of the character’s appearance for better results.
 
 A key parameter when using BrushNet is `brushnet_conditioning_scale`, which controls the trade-off between style consistency and background richness. Higher values (e.g., 1.0) emphasize style consistency, while lower values allow for more text alignment and richer background content. A value of `0.7` is commonly used.
 
@@ -91,7 +91,7 @@ python examples/brushnet/test_brushnet_sdxl.py
 
 ### 🎬 Animation
 
-A two-stage training approach is applied to learn anthropomorphic motion. 
+A two-stage training approach is applied to learn anthropomorphic motion. Example dataset can be found [here](animation/data/pig_walk).
 
 Stage1: Learn character identity (appearance)
 
@@ -100,7 +100,7 @@ cd animation
 bash stage1_id.sh
 ```
 
-Stage 2: Learn motion information. Update `lora_checkpoint` with the checkpoint from Stage 1 before starting Stage 2. More complex motions may require additional training steps in Stage 2.
+Stage 2: Learn motion information. Update `lora_checkpoint` with the checkpoint from stage 1 before stage 2 training. More complex motions may require additional training steps in stage 2.
 
 ```bash
 bash stage2_motion.sh
